@@ -13,6 +13,16 @@
         padding: 3em 0;
     }
 
+    .container-home {
+        border: pink 1px solid;
+        display: grid;
+        grid-template: 10% 10% 10% / 50% 50%;
+    }
+
+    img {
+        
+    }
+
 
     /***** navigation *****/
     nav ul {
