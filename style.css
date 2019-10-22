@@ -12,9 +12,15 @@
     }
 
     header {
-        border-bottom: 1px black solid;
+        border-bottom: 1px #65626B solid;
         text-align: center;
         padding: 3em 0;
+    }
+
+    .name,
+    .name a {
+        text-decoration: none;
+        color: #65626B;
     }
 
     .gallery-home {
@@ -38,7 +44,8 @@
   
     footer {
         height: 300px;
-        border-top: 1px solid black;
+        border-top: 1px solid #65626B;
+        text-align: center;
     }
 
     
@@ -49,22 +56,22 @@
         display: flex;
         justify-content: center;
         padding: 0;
-        margin-top: 3em;
+        margin-top: 5em;
     }
 
     nav li {
-        margin: 0 3em;  
+        margin: 0 6em;  
     }
 
     nav a {
         text-decoration: none;
-        color: black;
+        color: #65626B;
         padding: .35em;
     }
 
     nav a:hover,
     nav a:focus {
-        color: gray;
+        color: #EDE7E4;
     }
 
     /**********************
@@ -72,15 +79,23 @@
     ***********************/
     h1 {
         margin: 0;
-        font-size: 2.5em;
+        font-size: 5em;
+        font-weight: 200;
     }
 
     p {
         margin: 0;
-        font-size: 1.3em;
+        font-size: 2em;
         font-family: 'Esteban', serif;
     }
 
     nav a {
-        font-size: 1.3em;
+        font-size: 2.5em;
+        font-weight: 200;
+    }
+
+    footer p {
+        font-family: 'Oswald', sans-serif;
+        color: #65626B;
+        padding-top: 3em;
     }
