@@ -48,7 +48,22 @@
         text-align: center;
     }
 
-    
+    /**********************
+    Animation
+    **********************/
+    .gallery-home {
+        animation-name: gallery-animate;
+        animation-duration: 3s;
+    }
+
+    @keyframes gallery-animate {
+        0% {
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
 
     /***** navigation *****/
     nav ul {
