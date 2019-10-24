@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <meta name="HandheldFriendly" content="true">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     </head>
     <body>
         <header>
@@ -29,20 +30,20 @@
             <div class="gallery-home">
                 <div class="column">
                     <img src="images/01-Street/JJM_1190.jpg" class="home-img">
-                    <img src="images/01-Street/DSC_0508.jpg" class="home-img">
-                    <img src="images/01-Street/JJM_1202.jpg" class="home-img">
-                </div>
-                <div class="column">
-                    <img src="images/01-Street/DSC_0108.jpg" class="home-img">
-                    <img src="images/01-Street/JJM_1192.jpg" class="home-img">
-                    <img src="images/01-Street/JJM_1219.jpg" class="home-img">
+                    <img src="images/01-Street/DSC_0508.jpg" class="home-img"> 
                 </div>
                 <div class="column">
                     <img src="images/01-Street/JJM_1207.jpg" class="home-img">
+                    <img src="images/01-Street/JJM_1192.jpg" class="home-img">   
+                </div>
+                <div class="column">
+                    <img src="images/01-Street/JJM_1202.jpg" class="home-img">
+                    <img src="images/01-Street/DSC_0108.jpg" class="home-img">
                     <img src="images/01-Street/DSC_0531.jpg" class="home-img">
                     <img src="images/01-Street/JJM_1189.jpg" class="home-img">
                 </div>
                 <div class="column">
+                    <img src="images/01-Street/JJM_1219.jpg" class="home-img">
                     <img src="images/01-Street/DSC_0476.jpg" class="home-img">
                     <img src="images/01-Street/JJM_1195.jpg" class="home-img">
                 </div>
@@ -52,4 +53,30 @@
             <p>&copy; JJ Melegrito 2019</p>
         </footer>
     </body>
+    <script>
+        $(window).scroll(function(){
+            // Setting: Start fading 20% up the page
+            var startPos = 0.2;
+            // Cache window object
+            var $w = $(window);
+
+            // Go through each element and check its relative position within the viewport
+            $(".home-img").each(function(){
+
+                // Get current relative position in viewport, based on the top edge
+                var pos = $(this).offset().top - $w.scrollTop();
+
+                // Get viewport height
+                var vh = $w.height();
+
+                if (pos < vh * startPos){
+                    // If element has past the starting threshold, we fade it
+                    $(this).css("opacity", pos / (vh * startPos) * 1);
+                }
+                else {
+                    $(this).css("opacity", 1);
+                }
+            });
+        });
+    </script>
 </html>

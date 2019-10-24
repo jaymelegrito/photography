@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <meta name="HandheldFriendly" content="true">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     </head>
     <body>
         <header>
@@ -31,17 +32,21 @@
                     <img src="images/02-Weddings/JJM_2664.jpg" class="home-img">
                     <img src="images/02-Weddings/DSC_9482.jpg" class="home-img">
                     <img src="images/02-Weddings/JJM_0819.jpg" class="home-img">
+                    <img src="images/02-Weddings/DSC_9794.jpg" class="home-img">
+                </div>
+                <div class="column">
                     <img src="images/02-Weddings/JJM_5546.png" class="home-img">
                     <img src="images/02-Weddings/JJM_3694.jpg" class="home-img">
                     <img src="images/02-Weddings/JJM_5625.png" class="home-img">
+                    <img src="images/02-Weddings/JJM_3688.jpg" class="home-img">
+                </div>
+                <div class="column">
                     <img src="images/02-Weddings/JJM_0229.jpg" class="home-img">
                     <img src="images/02-Weddings/JJM_5562.png" class="home-img">
                     <img src="images/02-Weddings/JJM_2795.jpg" class="home-img">
+                    <img src="images/02-Weddings/JJM_3578.jpg" class="home-img">
                 </div>
                 <div class="column">
-                    <img src="images/02-Weddings/DSC_9794.jpg" class="home-img">
-                    <img src="images/02-Weddings/JJM_3688.jpg" class="home-img">
-                    <img src="images/02-Weddings/JJM_3578.jpg" class="home-img">
                     <img src="images/02-Weddings/JJM_0635.jpg" class="home-img">
                     <img src="images/02-Weddings/JJM_3591.jpg" class="home-img">
                     <img src="images/02-Weddings/DSC_9388.jpg" class="home-img">
@@ -55,4 +60,30 @@
             <p>&copy; JJ Melegrito 2019<br><i>All wedding images were shot for <a href="https://www.jaymayugaphoto.com/">jaymayugaphoto</a></i></p>
         </footer>
     </body>
+    <script>
+        $(window).scroll(function(){
+            // Setting: Start fading 20% up the page
+            var startPos = 0.2;
+            // Cache window object
+            var $w = $(window);
+
+            // Go through each element and check its relative position within the viewport
+            $(".home-img").each(function(){
+
+                // Get current relative position in viewport, based on the top edge
+                var pos = $(this).offset().top - $w.scrollTop();
+
+                // Get viewport height
+                var vh = $w.height();
+
+                if (pos < vh * startPos){
+                    // If element has past the starting threshold, we fade it
+                    $(this).css("opacity", pos / (vh * startPos) * 1);
+                }
+                else {
+                    $(this).css("opacity", 1);
+                }
+            });
+        });
+    </script>
 </html>
