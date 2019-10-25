@@ -28,6 +28,10 @@
         </header>
         <div class="white-top"></div>
         <main>
+            <div class="modal">
+                <span class="close">&times</span>
+                <img class="modal-content">
+            </div>
             <div class="gallery-home">
                 <div class="column">
                     <img src="images/03-Portraits/JJM_5858.jpg" class="home-img">
@@ -77,6 +81,22 @@
                     $(this).css("opacity", 1);
                 }
             });
+        });
+
+        //for modal
+        var img = $(".home-img");
+        var modalImg = $(".modal-content");
+        var modal = $(".modal");
+
+        img.click(function(){
+            modal.css("display", "block");
+            var newSrc = $(this).attr("src");
+            modalImg.attr("src", newSrc);
+        });
+
+        var span = $(".close");
+        span.click(function(){
+            modal.css("display", "none");
         });
     </script>
 </html>
