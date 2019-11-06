@@ -106,7 +106,7 @@
     **********************/
     .gallery-home {
         animation-name: gallery-animate;
-        animation-duration: .8s;
+        animation-duration: 1.2s;
     }
 
     @keyframes gallery-animate {
@@ -324,7 +324,7 @@
     **********************/
     .gallery-home {
         animation-name: gallery-animate;
-        animation-duration: .8s;
+        animation-duration: 1.2s;
     }
 
     @keyframes gallery-animate {
